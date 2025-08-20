@@ -34,3 +34,37 @@ You can check out [the Next.js GitHub repository](https://github.com/vercel/next
 The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+
+# Next.js
+
+- React.js ful-stack web development framework.
+- In addition to react that builds the UI, next.js also provides features like optimization, rendering, data fetching etc.
+- Opinionated framework (file. folder structure conventions)
+
+## Features
+
+1. Routing - File based routing
+2. API routes
+3. Rendering: SSR, SSG, CSR
+4. Data fetching/File system
+5. Optimization: Imgae, file optimization
+6. Styling
+
+## React server component
+
+- Architecture introduced by react team
+- Types
+  1. Server components
+  2. Client components
+
+### Server components
+
+- All react components in Next.js are treated as server component.
+- These components can perform server side tasks like data fetching, files read, database data fetching, async tasks
+- Can not use react hooks, events, user interaction
+
+### Client components
+
+- Can use react hooks, events , user interaction
+- Traditional react components
+- Use the directive `use client` at the top of component file
