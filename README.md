@@ -68,3 +68,38 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/bui
 - Can use react hooks, events , user interaction
 - Traditional react components
 - Use the directive `use client` at the top of component file
+
+## Routing
+
+- File based routing
+- All routes must be inside `/src/app` directory
+- Every route must have `page.js` or `page.tsx` file
+- page.js/page.tsx file must have a default export component
+
+1. Simple routes
+
+- Create a folder inside /src/app and page.js file
+- Example: `/src/app/about/page.js`
+
+2. Nested routes
+
+- Create nested folder for nested routes
+- Example: `/src/app/courses/web-design/page.js` | `/src/app/courses/api/node.js/page.js`
+
+3. Dynamic routes
+
+- Create a folder enclosed by []
+- Example: `/src/app/products/[productId]/page.js`
+
+4. Nested dynamic routes
+
+- Example: `/src/app/products/[productId]/reviews/[reviewId]/page.js`
+
+5. Catch all segments
+- Example: `/src/app/blogs/[...slug]/page.js`
+
+6. Route groups
+- Example: `/src/app/(auth)/...`
+
+7. Private folders
+- Example: `/src/app/_components`
