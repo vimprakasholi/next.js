@@ -96,10 +96,44 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/bui
 - Example: `/src/app/products/[productId]/reviews/[reviewId]/page.js`
 
 5. Catch all segments
+
 - Example: `/src/app/blogs/[...slug]/page.js`
 
 6. Route groups
+
 - Example: `/src/app/(auth)/...`
 
 7. Private folders
+
 - Example: `/src/app/_components`
+
+## Layouts
+
+- UI component that is shared among dfferent pages
+- `layout.js` or `layout.tsx`
+
+## Nested layouts
+
+- Example: `/src/app/products/layout.js`
+
+## Files
+
+- page.js
+- layout.js
+- not-found.js
+- loading.js
+- error.js // always client component
+
+## Link
+
+## Params and searchParams
+
+- Params: dynamic route params => available on `page.js` & `layout.js`
+- searchParams: query => available on `page.js`
+
+## Additional packages
+
+1. React hook form
+2. React icons
+3. React toastify
+4. Tailwindcss/Flowbite
