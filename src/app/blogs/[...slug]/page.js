@@ -1,7 +1,4 @@
-const BlogDetails = async({params}) => {
-    const slug = (await params).slug;
-    console.log(slug);
-    
+const BlogDetails = () => {
   return (
     <div>
       <h1>Blogs Details</h1>
@@ -11,7 +8,7 @@ const BlogDetails = async({params}) => {
         <li>{slug[2]}</li>
       </ul>
     </div>
-  )
-}
+  );
+};
 
-export default BlogDetails
+export default BlogDetails;
