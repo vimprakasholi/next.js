@@ -1,12 +1,9 @@
-import React from "react";
+export const metadata = {
+  title: "Products",
+};
 
 const ProductsLayout = ({ children }) => {
-  return (
-    <div>
-      <h1 className="text-4xl py-2">Products</h1>
-      {children}
-    </div>
-  );
+  return <div className="py-6">{children}</div>;
 };
 
 export default ProductsLayout;

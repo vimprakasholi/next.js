@@ -131,6 +131,14 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/bui
 - Params: dynamic route params => available on `page.js` & `layout.js`
 - searchParams: query => available on `page.js`
 
+## Metadata
+
+- Metadata api is used to define metadata of page.
+- page.js / layout.js
+- Useful for search engine optimization (SEO)
+- Static: metadata
+- Dynamic: generateMetadata()
+
 ## Additional packages
 
 1. React hook form
