@@ -1,32 +1,38 @@
+import Image from "next/image";
+import imagePlaceholder from "@/assets/images/products/placeholder.png";
+
 const LoadingCard = () => {
   return (
-    <div className="border border-gray-100 shadow-md rounded-lg animate-pulse duration-100 ease-in-out">
-      <div className="w-full h-40 rounded-t bg-gray-300 mb-2"></div>
+    <div className="bg-white border border-gray-100 shadow-md rounded-lg animate-pulse duration-100 ease-in-out">
+      <Image
+        className="w-full h-48 object-cover rounded-t-lg"
+        src={imagePlaceholder}
+        alt="Product Image"
+        height={150}
+        width={250}
+      />
       <div className="px-4 py-3">
-        <div className="w-full h-10 bg-gray-500 rounded"></div>
-        <div className="flex items-center gap-2 text-sm py-2">
-          <span className="bg-green-200 w-20 h-5 text-green-600 px-2 rounded"></span>
-          <span className="bg-blue-200  w-20 h-5 text-blue-600 px-2 rounded"></span>
+        <div className="w-full h-8 bg-gray-700"></div>
+        <div className="w-1/3 h-4 bg-yellow-400 my-2"></div>
+        <div className="flex items-end gap-2 text-sm">
+          <span className="bg-primary/80 w-1/2 h-6 text-green-600 px-3"></span>
+          <span className="bg-gray-400  w-1/3 h-5 text-blue-600 px-3"></span>
         </div>
-        <p className="text-lg my-2 w-30 h-5 bg-gray-300 rounded"></p>
-        <button className="px-3 py-1 rounded bg-blue-600 w-40 h-10 text-white shadow"></button>
       </div>
     </div>
   );
 };
 const ProductsLoader = () => {
   return (
-    <div className="container mx-auto px-6">
-      <div className="grid grid-cols-4 gap-3">
-        <LoadingCard />
-        <LoadingCard />
-        <LoadingCard />
-        <LoadingCard />
-        <LoadingCard />
-        <LoadingCard />
-        <LoadingCard />
-        <LoadingCard />
-      </div>
+    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-3">
+      <LoadingCard />
+      <LoadingCard />
+      <LoadingCard />
+      <LoadingCard />
+      <LoadingCard />
+      <LoadingCard />
+      <LoadingCard />
+      <LoadingCard />
     </div>
   );
 };

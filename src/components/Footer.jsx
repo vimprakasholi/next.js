@@ -65,7 +65,7 @@ const Footer = () => {
           </div>
           <div>
             <h3 className="text-lg font-bold text-white mb-3">We Accept</h3>
-            <div className="flex items-start flex-col gap-3 gap-2">
+            <div className="flex items-start flex-col gap-x-2 gap-y-3">
               <Image
                 className="w-auto h-10 bg-white rounded px-5 py-2"
                 src={esewa}

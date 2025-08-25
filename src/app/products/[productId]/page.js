@@ -1,18 +1,10 @@
-async function getProductById(productId) {
-  const product = await fetch(
-    `https://node-20250302.vercel.app/api/products/${productId}`
-  )
-    .then((res) => res?.json())
-    .catch((error) => {
-      throw new Error(`Product not found`);
-    });
-
-  return product;
-}
+import { getProductById } from "@/api/products";
 
 export const generateMetadata = async ({ params }) => {
   const productId = (await params).productId;
-  const product = await getProductById(productId);
+  const response = await getProductById(productId);
+  const product = response.data;
+
   return {
     title: product.name,
     keywords: `${product?.name}, ${product?.brand}, ${product?.category}`,
@@ -20,18 +12,18 @@ export const generateMetadata = async ({ params }) => {
 };
 const ProductDetails = async ({ params }) => {
   const productId = (await params).productId;
-
-  const product = await getProductById(productId);
+  const response = await getProductById(productId);
+  const product = response.data;
 
   return (
     <div>
-      <h1>Product Details</h1>
+      <h1 className="text-3xl">Product Details</h1>
       <ul>
-        <li>Name: {product.name}</li>
-        <li>Brand: {product.brand}</li>
-        <li>Category: {product.category}</li>
-        <li>Price: {product.price}</li>
-        <li>Description: {product.description}</li>
+        <li>Name: {product?.name}</li>
+        <li>Brand: {product?.brand}</li>
+        <li>Category: {product?.category}</li>
+        <li>Price: {product?.price}</li>
+        <li>Description: {product?.description}</li>
       </ul>
     </div>
   );
