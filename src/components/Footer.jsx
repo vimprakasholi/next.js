@@ -103,7 +103,7 @@ const Footer = () => {
         </div>
         <div className="flex flex-col md:flex-row items-center justify-between gap-3s">
           <p className="text-slate-400 text-sm">Copyright © 2025 ShopNest</p>
-          <div>
+          <div className="flex gap-1">
             <a className="text-sm text-slate-400 hover:underline" href="#">
               Privacy Policy
             </a>

@@ -8,14 +8,8 @@ async function login({ email, password }) {
   });
 }
 
-async function registerUser({ email, password }) {
-  return await axios.post(`${config.apiUrl}/api/auth/register`, {
-    email,
-    password,
-    confirmPassword,
-    phone,
-    address,
-  });
+async function signup(data) {
+  return await axios.post(`${config.apiUrl}/api/auth/register`, data);
 }
 
-export { login, registerUser };
+export { login, signup };

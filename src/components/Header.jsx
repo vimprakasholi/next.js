@@ -1,8 +1,8 @@
-import Link from "next/link";
 import Logo from "./Logo";
 import NavMenu from "./NavMenu";
-import { LOGINT_ROUTE } from "@/constants/routes";
 import { MdOutlineAddShoppingCart } from "react-icons/md";
+import AuthMenu from "./AuthMenu";
+
 const Header = () => {
   return (
     <header className="shadow sticky top-0 bg-white z-50">
@@ -16,12 +16,7 @@ const Header = () => {
             <div className="text-sm">
               <MdOutlineAddShoppingCart />
             </div>
-            <Link
-              href={LOGINT_ROUTE}
-              className="text-sm font-semibold text-secondary border-secondary border-2 hover:border-secondary rounded-3xl px-4 py-1 hover:bg-secondary hover:text-white transition"
-            >
-              Login
-            </Link>
+            <AuthMenu />
           </div>
         </div>
       </div>

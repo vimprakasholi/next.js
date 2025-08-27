@@ -3,6 +3,7 @@ import "./globals.css";
 import config from "@/config";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import { ToastContainer } from "react-toastify";
 
 export const metadata = {
   title: {
@@ -18,8 +19,9 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <body>
         <Header />
-        <main className="min-h-screen">{children}</main>
+        <main>{children}</main>
         <Footer />
+        <ToastContainer/>
       </body>
     </html>
   );
