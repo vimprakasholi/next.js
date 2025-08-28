@@ -2,12 +2,12 @@ import Logo from "@/components/Logo";
 
 const AuthLayout = ({ children }) => {
   return (
-    <section className="flex md:items-center justify-center py-12 bg-slate-100">
+    <section className="flex md:items-center justify-center py-12 bg-slate-100 dark:bg-slate-800 dark:border-b dark:border-slate-600">
       <div className="container mx-auto px-4">
         <div className="flex flex-col items-center justify-center">
           <div className="max-w-3xl flex flex-col items-center">
             <Logo className="text-4xl pb-8" />
-            <div className="grid grid-cols-1 md:grid-cols-2 items-center bg-white rounded-2xl shadow-md w-full">
+            <div className="grid grid-cols-1 md:grid-cols-2 items-center bg-white dark:bg-slate-700 rounded-2xl shadow-md w-full">
               <div className="hidden md:flex bg-gradient-to-b from-primary to-secondary h-full rounded-l-2xl items-center justify-center">
                 <div className="text-center px-6">
                   <h1 className="text-4xl text-white font-semibold mb-5">

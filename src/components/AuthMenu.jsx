@@ -2,21 +2,18 @@
 import { LOGINT_ROUTE } from "@/constants/routes";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
+import { useEffect, useState } from "react";
+import { useSelector } from "react-redux";
 
 const AuthMenu = () => {
-  const authToken = localStorage.getItem("authToken");
+  const { user } = useSelector((state) => state.auth);
 
-  const router = useRouter();
+  function logout() {}
 
-  function logout() {
-    localStorage.removeItem("authToken");
-    router.push(LOGINT_ROUTE);
-  }
-
-  if (authToken)
+  if (user)
     return (
       <button
-        className="text-sm font-semibold text-secondary border-secondary border-2 hover:border-secondary rounded-3xl px-4 py-1 hover:bg-secondary hover:text-white transition"
+        className="text-sm cursor-pointer font-semibold text-secondary border-secondary border-2 hover:border-secondary rounded-3xl px-4 py-1 hover:bg-secondary hover:text-white transition"
         onClick={logout}
       >
         Logout
