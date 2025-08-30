@@ -1,8 +1,23 @@
+"use client";
 import Logo from "@/components/Logo";
+import { HOME_ROUTE } from "@/constants/routes";
+import { useRouter } from "next/navigation";
+import { useEffect, useRef } from "react";
+import { useSelector } from "react-redux";
 
 const AuthLayout = ({ children }) => {
+  const { user } = useSelector((state) => state.auth);
+  const router = useRouter();
+
+  useEffect(() => {
+    if (user) {
+      router.push(HOME_ROUTE);
+      user.message = "You're already logged in";
+    }
+  }, [user, router]);
+
   return (
-    <section className="flex md:items-center justify-center py-12 bg-slate-100 dark:bg-slate-800 dark:border-b dark:border-slate-600">
+    <section className="flex md:items-center justify-center py-12 bg-slate-100 dark:bg-slate-800">
       <div className="container mx-auto px-4">
         <div className="flex flex-col items-center justify-center">
           <div className="max-w-3xl flex flex-col items-center">

@@ -1,12 +1,20 @@
 import { configureStore } from "@reduxjs/toolkit";
-import authSlice from "@/redux/auth/authSlice";
-import userPreferenceSlice from "@/redux/userPreferences/userPreferenceSlice";
+import storage from "redux-persist/lib/storage";
+import rootReducer from "./rootReducer";
+import { persistStore, persistReducer } from "redux-persist";
+
+const persistConfig = {
+  key: "root",
+  storage,
+  whitelist: ["auth", "userPreferences"],
+};
+
+const persistedReducer = persistReducer(persistConfig, rootReducer);
 
 const store = configureStore({
-  reducer: {
-    auth: authSlice,
-    userPreferences: userPreferenceSlice,
-  },
+  reducer: persistedReducer,
 });
 
-export { store };
+const persistor = persistStore(store);
+
+export { store, persistor };

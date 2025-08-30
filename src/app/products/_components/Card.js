@@ -8,7 +8,7 @@ import { PRODUCTS_ROUTE } from "@/constants/routes";
 
 const ProductCard = ({ product }) => {
   return (
-    <div className="bg-white rounded-lg shadow-md">
+    <div className="bg-white dark:bg-slate-700 dark:text-white rounded-lg shadow-md">
       <div className="rounded-t-lg relative overflow-hidden">
         <Link href={`${PRODUCTS_ROUTE}/${product._id}`}>
           <Image
@@ -25,7 +25,7 @@ const ProductCard = ({ product }) => {
       </div>
       <div className="p-4">
         <Link href={`${PRODUCTS_ROUTE}/${product._id}`}>
-          <h3 className="font-semibold text-xl hover:text-secondary">
+          <h3 className="font-semibold text-xl hover:text-secondary dark:hover:text-primary">
             {product.name}
           </h3>
         </Link>
@@ -35,18 +35,18 @@ const ProductCard = ({ product }) => {
           <FaStar />
           <FaStar />
           <FaStar />
-          <span className="text-gray-500">(265)</span>
+          <span className="text-gray-500 dark:text-gray-300">(265)</span>
         </div>
         <div className="flex justify-between">
           <div>
-            <span className="text-primary text-lg font-bold mr-1">
+            <span className="text-primary dark:text-secondary text-lg font-bold mr-1">
               Rs. {product.price}
             </span>
-            <span className="line-through text-gray-500 text-sm">
+            <span className="line-through text-gray-500 dark:text-gray-300 text-sm">
               Rs. {product.price * 1.2}
             </span>
           </div>
-          <button className="text-primary">
+          <button className="text-primary dark:text-secondary">
             <FaCartPlus />
           </button>
         </div>

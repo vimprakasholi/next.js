@@ -1,5 +1,4 @@
 "use client";
-import { signup } from "@/api/auth";
 import { EMAIL_REGEX } from "@/constants/regex";
 import { HOME_ROUTE, LOGINT_ROUTE } from "@/constants/routes";
 import Link from "next/link";
@@ -7,6 +6,10 @@ import { useForm } from "react-hook-form";
 import PasswordInput from "../_components/PasswordInput";
 import { toast } from "react-toastify";
 import { useRouter } from "next/navigation";
+import { useDispatch, useSelector } from "react-redux";
+import { registerUser } from "@/redux/auth/authActions";
+import { useEffect, useRef } from "react";
+import Button from "@/components/Button";
 
 const Register = () => {
   const {
@@ -18,10 +21,12 @@ const Register = () => {
 
   const password = watch("password");
   const router = useRouter();
+  const { user, error, loading } = useSelector((state) => state.auth);
+  const dispatch = useDispatch();
 
   async function submitForm(data) {
-    try {
-      const response = await signup({
+    dispatch(
+      registerUser({
         name: data.name,
         email: data.email,
         phone: data.phone,
@@ -31,17 +36,23 @@ const Register = () => {
           province: data.province,
           city: data.city,
         },
-      });
-
-      console.log(response);
-
-      localStorage.setItem("authToken", response.data?.authToken);
-
-      router.push(HOME_ROUTE);
-    } catch (error) {
-      toast.error(error.response.data);
-    }
+      })
+    );
   }
+
+  useEffect(() => {
+    if (error) {
+      toast.error(error, { autoClose: 1500 });
+
+      return;
+    }
+
+    if (user) {
+      toast.success(user.message, { autoClose: 1500 });
+      router.push(HOME_ROUTE);
+    }
+  }, [user, error, router]);
+
   return (
     <div className="p-6 space-y-2 md:space-y-4 sm:p-8 dark:bg-slate-700 rounded-2xl">
       <h1 className="text-xl font-bold leading-tight tracking-tight text-gray-900 md:text-2xl dark:text-white">
@@ -207,13 +218,7 @@ const Register = () => {
             {errors.confirmPassword?.message}
           </p>
         </div>
-
-        <button
-          type="submit"
-          className="w-full bg-primary/80 text-white hover:bg-primary transition font-medium rounded-lg text-sm px-5 py-2.5 text-center cursor-pointer"
-        >
-          Register
-        </button>
+        <Button loading={loading} label="Register" />
         <p className="text-sm font-light text-slate-500 dark:text-slate-400">
           Already have an account?{" "}
           <Link

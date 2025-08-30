@@ -8,7 +8,8 @@ import { toast } from "react-toastify";
 import PasswordInput from "../_components/PasswordInput";
 import { useDispatch, useSelector } from "react-redux";
 import { loginUser } from "@/redux/auth/authActions";
-import { useEffect } from "react";
+import { useEffect, useRef } from "react";
+import Button from "@/components/Button";
 
 const Login = () => {
   const {
@@ -19,7 +20,7 @@ const Login = () => {
 
   const router = useRouter();
   const dispatch = useDispatch();
-  const { user, error } = useSelector((state) => state.auth);
+  const { user, error, loading } = useSelector((state) => state.auth);
 
   async function submitForm(data) {
     dispatch(loginUser(data));
@@ -113,12 +114,7 @@ const Login = () => {
             Forgot password?
           </a>
         </div>
-        <button
-          type="submit"
-          className="w-full bg-primary/80 text-white hover:bg-primary transition font-medium rounded-lg text-sm px-5 py-2.5 text-center cursor-pointer"
-        >
-          Sign in
-        </button>
+        <Button loading={loading} label="Sign in" />
         <p className="text-sm font-light text-slate-500 dark:text-slate-400">
           Don&apos;t have an account yet?{" "}
           <Link
