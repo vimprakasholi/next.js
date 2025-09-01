@@ -12,7 +12,6 @@ const AuthLayout = ({ children }) => {
   useEffect(() => {
     if (user) {
       router.push(HOME_ROUTE);
-      user.message = "You're already logged in";
     }
   }, [user, router]);
 

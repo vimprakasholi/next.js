@@ -33,7 +33,7 @@ const Login = () => {
     }
 
     if (user) {
-      toast.success(user.message, { autoClose: 1500 });
+      toast.success("Login successful", { autoClose: 1500 });
       router.push(HOME_ROUTE);
     }
   }, [user, error, router]);

@@ -26,7 +26,6 @@ const AdminLayout = ({ children }) => {
 
   return (
     <div>
-      <h1>Admin Only</h1>
       {children}
     </div>
   );
