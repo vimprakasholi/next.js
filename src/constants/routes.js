@@ -6,3 +6,4 @@ export const BLOGS_ROUTE = "/blogs"
 export const CONTACT_ROUTE = "/contact";
 export const LOGINT_ROUTE = "/login";
 export const REGISTER_ROUTE = "/register";
+export const PRODUCT_MANAGEMENT_ROUTE = "/product-management";
