@@ -110,7 +110,7 @@ const ProductForm = ({ product, isEditing = false }) => {
           <input
             type="number"
             id="price"
-            className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg p-2.5 w-full"
+            className="bg-gray-50 border border-gray-300 text-gray-900 dark:bg-gray-700 dark:border-gray-600 dark:text-white text-sm rounded-lg p-2.5 w-full"
             placeholder="Rs.2999"
             {...register("price", {
               required: "Product price is required",

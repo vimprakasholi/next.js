@@ -43,7 +43,7 @@ const ProductCard = ({ product }) => {
               Rs. {product.price}
             </span>
             <span className="line-through text-gray-500 dark:text-gray-300 text-sm">
-              Rs. {product.price * 1.2}
+              Rs.{(product.price * 1.2).toFixed(2)}
             </span>
           </div>
           <button className="text-primary dark:text-secondary">
