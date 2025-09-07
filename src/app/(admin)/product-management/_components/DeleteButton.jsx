@@ -28,7 +28,7 @@ const DeleteProductButton = ({ id }) => {
         onClick={() => {
           setShowModal(true);
         }}
-        className="text-red-600"
+        className="text-red-600 cursor-pointer"
       >
         <FaTrashCan />
       </button>
@@ -39,7 +39,7 @@ const DeleteProductButton = ({ id }) => {
         confirmAction={
           <button
             onClick={confirmDelete}
-            className="text-white bg-red-600 hover:bg-red-800 focus:ring-4 focus:outline-none focus:ring-red-300 dark:focus:ring-red-800 font-medium rounded-lg text-sm inline-flex items-center px-5 py-2.5 text-center"
+            className="text-white bg-red-600 hover:bg-red-800 font-medium rounded-lg text-sm inline-flex items-center px-5 py-2.5 text-center cursor-pointer"
           >
             Yes, I'm sure
           </button>

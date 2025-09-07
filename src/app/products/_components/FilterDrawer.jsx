@@ -9,7 +9,7 @@ import {
   DEFAULT_SORT,
 } from "@/constants/filterDefaults";
 import { PRODUCTS_ROUTE } from "@/constants/routes";
-import { useRouter } from "next/navigation";
+import { useRouter, useSearchParams } from "next/navigation";
 import { useState } from "react";
 
 const FilterDrawer = ({ showFilter, setShowfilter, brands, categories }) => {
@@ -21,9 +21,10 @@ const FilterDrawer = ({ showFilter, setShowfilter, brands, categories }) => {
   const [categoryFilter, setCategoryFilter] = useState(DEFAULT_CATEGORY_FILTER);
 
   const router = useRouter();
+  const searchParams = useSearchParams();
 
   function setFilter() {
-    const params = new URLSearchParams();
+    const params = new URLSearchParams(searchParams.toString());
 
     params.set("limit", limit);
     params.set("sort", sort);
@@ -65,7 +66,7 @@ const FilterDrawer = ({ showFilter, setShowfilter, brands, categories }) => {
         onClick={() => setShowfilter(false)}
       ></div>
       <div className="overflow-y-auto fixed top-14 left-0 z-20 pt-8 pb-16 px-4 h-screen min-w-48 shadow bg-white dark:bg-slate-900">
-        <h4 className="text-2xl font-medium mb-2 dark:text-white">
+        <h4 className="text-2xl md:text-3xl font-medium mb-2 dark:text-white">
           Filter Products
         </h4>
         <div className="py-2">
@@ -77,13 +78,14 @@ const FilterDrawer = ({ showFilter, setShowfilter, brands, categories }) => {
           </label>
           <select
             onChange={(e) => setLimit(e.target.value)}
+            value={limit}
             id="limit"
             className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
           >
-            <option value="10">10</option>
-            <option value="20">20</option>
-            <option value="50">50</option>
-            <option value="100">100</option>
+            <option value={10}>10</option>
+            <option value={20}>20</option>
+            <option value={50}>50</option>
+            <option value={100}>100</option>
           </select>
         </div>
         <div className="py-2">
@@ -161,7 +163,9 @@ const FilterDrawer = ({ showFilter, setShowfilter, brands, categories }) => {
               Select Category
             </option>
             {categories.map((category, index) => (
-              <option key={index} value={category}>{category}</option>
+              <option key={index} value={category}>
+                {category}
+              </option>
             ))}
           </select>
         </div>

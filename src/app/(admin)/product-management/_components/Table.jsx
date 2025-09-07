@@ -1,7 +1,6 @@
 "use client";
 
 import { FaAngleLeft, FaAngleRight, FaPencil, FaPlus } from "react-icons/fa6";
-import { GrUpdate } from "react-icons/gr";
 import { HiOutlineUpload } from "react-icons/hi";
 import { format } from "date-fns";
 import { FaCog } from "react-icons/fa";
@@ -68,11 +67,9 @@ const ProductsTable = () => {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    let query = "";
+    const query = {};
 
-    if (sortBy) {
-      query = query + "sort=" + JSON.stringify({ [sortBy]: sortOrder });
-    }
+    if (sortBy) query.sort = JSON.stringify({ [sortBy]: sortOrder });
 
     getProducts(query)
       .then((response) => {
@@ -122,7 +119,7 @@ const ProductsTable = () => {
                 <th
                   key={index}
                   scope="col"
-                  className="px-4 py-3"
+                  className="px-4 py-3 cursor-pointer"
                   onClick={() => {
                     if (!column.sortable) return;
                     setSortBy(column.key);
@@ -208,7 +205,7 @@ const ProductsTable = () => {
                     <div className="flex items-center justify-center gap-2">
                       <Link
                         href={`${PRODUCT_MANAGEMENT_ROUTE}/edit-product/${product._id}`}
-                        className="text-blue-700"
+                        className="text-blue-700 cursor-pointer"
                       >
                         <FaPencil />
                       </Link>
