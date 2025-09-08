@@ -52,7 +52,9 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/bui
 
 ## React server component
 
-- Architecture introduced by react team
+- Architecture introduced by react team.
+- Uses both client and server environment functionality.
+- Dual component model
 - Types
   1. Server components
   2. Client components
@@ -60,7 +62,7 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/bui
 ### Server components
 
 - All react components in Next.js are treated as server component.
-- These components can perform server side tasks like data fetching, files read, database data fetching, async tasks
+- These components can perform server side tasks like data fetching, files read, database data fetching, async tasks, metadata set
 - Can not use react hooks, events, user interaction
 
 ### Client components
@@ -145,3 +147,16 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/bui
 2. React icons
 3. React toastify
 4. Tailwindcss/Flowbite
+
+# Rendering
+
+- Process of transforming component code into UI.
+- Client side rendering (CSR) and server side rendering (SSR).
+
+## CSR
+
+- If rendering is done in browser.
+
+## SSR
+
+- If rendering is done in server/backend.

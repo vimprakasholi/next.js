@@ -3,9 +3,9 @@ import Link from "next/link";
 import imagePlaceholder from "@/assets/images/products/placeholder.png";
 
 import { FaStar } from "react-icons/fa6";
-import { FaCartPlus } from "react-icons/fa";
 import { PRODUCTS_ROUTE } from "@/constants/routes";
 import { GRID_VIEW, LIST_VIEW } from "@/constants/productView";
+import AddToCart from "./AddToCart";
 
 const ProductCard = ({ product, productView }) => {
   return (
@@ -74,9 +74,7 @@ const ProductCard = ({ product, productView }) => {
               Rs.{(product.price * 1.2).toFixed(2)}
             </span>
           </div>
-          <button className="text-primary dark:text-secondary">
-            <FaCartPlus />
-          </button>
+          <AddToCart product={product} />
         </div>
       </div>
     </div>

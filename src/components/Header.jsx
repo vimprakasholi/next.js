@@ -1,8 +1,8 @@
 import Logo from "./Logo";
 import NavMenu from "./NavMenu";
-import { MdOutlineAddShoppingCart } from "react-icons/md";
 import AuthMenu from "./AuthMenu";
 import ToggleTheme from "./ToggleTheme";
+import CartButton from "./CartButton";
 
 const Header = () => {
   return (
@@ -15,9 +15,7 @@ const Header = () => {
 
           <div className="flex items-center gap-4">
             <ToggleTheme />
-            <div className="text-sm">
-              <MdOutlineAddShoppingCart />
-            </div>
+            <CartButton />
             <AuthMenu />
           </div>
         </div>
