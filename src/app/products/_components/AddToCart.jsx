@@ -3,6 +3,7 @@
 import { addToCart } from "@/redux/cart/cartSlice";
 import { FaCartPlus } from "react-icons/fa6";
 import { useDispatch } from "react-redux";
+import { toast } from "react-toastify";
 
 const AddToCart = ({ product }) => {
   const dispatch = useDispatch();
@@ -11,6 +12,7 @@ const AddToCart = ({ product }) => {
     delete product.description;
 
     dispatch(addToCart(product));
+    toast.success(`${product.name} added to cart`, { autoClose: 1500 });
   }
 
   return (

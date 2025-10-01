@@ -2,6 +2,7 @@ export const HOME_ROUTE = "/";
 export const ABOUT_ROUTE = "/about";
 export const PRODUCTS_ROUTE = "/products";
 export const PRODUCTS_CART_ROUTE = "/products/cart";
+export const PRODUCTS_ORDERS_ROUTE = "/products/orders";
 export const TESTIMONIAL_ROUTE = "/testimonials";
 export const BLOGS_ROUTE = "/blogs";
 export const CONTACT_ROUTE = "/contact";

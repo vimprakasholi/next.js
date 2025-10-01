@@ -2,7 +2,14 @@
 
 import { IoMdClose } from "react-icons/io";
 
-const Modal = ({ showModal, setShowModal, label, icon, confirmAction }) => {
+const Modal = ({
+  showModal,
+  setShowModal,
+  label,
+  icon,
+  info,
+  confirmAction,
+}) => {
   function closeModal() {
     setShowModal(false);
   }
@@ -22,6 +29,7 @@ const Modal = ({ showModal, setShowModal, label, icon, confirmAction }) => {
             <h3 className="mb-5 text-lg font-normal text-gray-500 dark:text-gray-400">
               {label}
             </h3>
+            {info}
             {confirmAction}
             <button
               onClick={closeModal}
