@@ -1,6 +1,6 @@
 import { createOrder } from "@/api/orders";
 import Spinner from "@/components/Spinner";
-import { PRODUCTS_ORDERS_ROUTE } from "@/constants/routes";
+import { ORDERS_ROUTE } from "@/constants/routes";
 import { clearCart } from "@/redux/cart/cartSlice";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
@@ -27,7 +27,7 @@ const Checkout = ({ products, totalPrice }) => {
     })
       .then(() => {
         toast.success("Order placed successfully", { autoClose: 1500 });
-        router.push(PRODUCTS_ORDERS_ROUTE);
+        router.push(ORDERS_ROUTE);
         dispatch(clearCart());
       })
       .catch((error) => toast.error(error.response.data, { autoClose: 1500 }))

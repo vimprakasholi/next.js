@@ -3,7 +3,7 @@ import {
   BLOGS_ROUTE,
   CONTACT_ROUTE,
   HOME_ROUTE,
-  PRODUCTS_CART_ROUTE,
+  ORDERS_ROUTE,
   PRODUCTS_ROUTE,
   TESTIMONIAL_ROUTE,
 } from "./routes";
@@ -20,6 +20,10 @@ const navLinks = [
   {
     route: PRODUCTS_ROUTE,
     label: "Products",
+  },
+  {
+    route: ORDERS_ROUTE,
+    label: "Orders",
   },
   {
     route: BLOGS_ROUTE,
