@@ -28,10 +28,10 @@ const OrdersPage = () => {
   const [orders, setOrders] = useState([]);
   const [isUpdated, setIsUpdated] = useState(true);
 
-  function fetchOrders() {
+  async function fetchOrders() {
     setLoading(true);
 
-    getOrdersByUser(statusParam)
+   await getOrdersByUser(statusParam)
       .then((response) => {
         setOrders(response.data);
       })

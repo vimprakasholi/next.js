@@ -160,3 +160,19 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/bui
 ## SSR
 
 - If rendering is done in server/backend.
+
+## Pay Via Khalti
+- Click pay Via Khalti
+- Responds with khalti payment URL
+- Redirect to khalti payment URL
+- User will do the payment
+- khalti will verify the payment
+- khalti will redirect to return URL
+- Developers need to handle the khalti payment with status and update the payment.
+
+## Pay Via Stripe
+- Use Stripe SDK
+- On payment init, the api responds with `client_secret`
+- Use this client_secret in frontend SDK
+- confirm card payment via stripe
+- Use the result to confirm payment in our app

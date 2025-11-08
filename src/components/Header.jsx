@@ -1,3 +1,5 @@
+"use client";
+
 import Logo from "./Logo";
 import NavMenu from "./NavMenu";
 import AuthMenu from "./AuthMenu";

@@ -1,4 +1,5 @@
-"use client"
+"use client";
+
 import { useSelector } from "react-redux";
 
 const MainLayout = ({ children }) => {

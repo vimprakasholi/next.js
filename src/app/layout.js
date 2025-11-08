@@ -3,9 +3,9 @@ import "./globals.css";
 import config from "@/config";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
-import { ToastContainer } from "react-toastify";
 import AppProvider from "@/redux/provider";
 import MainLayout from "./layouts/MainLayout";
+import ToastWrapper from "@/components/ToastWrapper";
 
 export const metadata = {
   title: {
@@ -25,7 +25,7 @@ export default function RootLayout({ children }) {
             <Header />
             <main>{children}</main>
             <Footer />
-            <ToastContainer />
+            <ToastWrapper />
           </MainLayout>
         </AppProvider>
       </body>
