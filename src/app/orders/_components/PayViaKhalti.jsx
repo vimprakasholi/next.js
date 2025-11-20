@@ -1,4 +1,3 @@
-
 import { payViaKhalti } from "@/api/orders";
 import khalti from "@/assets/images/payments/khalti.jpg";
 import Image from "next/image";

@@ -1,14 +1,11 @@
-import ProductsTable from "./_components/Table";
-
-const ProductManagement = () => {
+const UserManagement = () => {
   return (
     <div className="px-4 mx-auto max-w-screen-2xl">
       <h2 className="text-gray-800 dark:text-white mb-5 text-2xl font-semibold">
-        Product Management
+        User Management
       </h2>
-      <ProductsTable />
     </div>
   );
 };
 
-export default ProductManagement;
+export default UserManagement;

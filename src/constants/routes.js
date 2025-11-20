@@ -9,3 +9,6 @@ export const CONTACT_ROUTE = "/contact";
 export const LOGINT_ROUTE = "/login";
 export const REGISTER_ROUTE = "/register";
 export const PRODUCT_MANAGEMENT_ROUTE = "/product-management";
+export const ORDER_MANAGEMENT_ROUTE = "/order-management";
+export const USER_MANAGEMENT_ROUTE = "/user-management";
+export const DASHBOARD_ROUTE = "/dashboard";

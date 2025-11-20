@@ -5,6 +5,7 @@ import { allowedAdminRoles } from "@/helpers/auth";
 import { useRouter } from "next/navigation";
 import { useEffect } from "react";
 import { useSelector } from "react-redux";
+import Sidebar from "./_components/Sidebar";
 
 const AdminLayout = ({ children }) => {
   const { user } = useSelector((state) => state.auth);
@@ -25,8 +26,11 @@ const AdminLayout = ({ children }) => {
     );
 
   return (
-    <div>
-      {children}
+    <div className="relative lg:pl-64">
+      <Sidebar />
+      <section className="min-h-screen bg-gray-50 dark:bg-gray-900 py-6 sm:py-8">
+        {children}
+      </section>
     </div>
   );
 };
