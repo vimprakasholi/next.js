@@ -19,8 +19,8 @@ const Sidebar = () => {
   const pathname = usePathname();
 
   return (
-    <div className="bg-white hidden lg:block w-64 h-full z-20 absolute top-0 left-0 border-r border-gray-300 dark:border-gray-700 dark:bg-gray-800">
-      <div className="px-2 py-4 flex flex-col gap-1">
+    <div className="bg-white hidden lg:block w-64 h-full z-20 absolute top-0 left-0 border-r border-gray-300 dark:border-slate-700 dark:bg-slate-900">
+      <div className="p-4 flex flex-col gap-1">
         {amdinMenu.map((menu) => {
           const isActive = pathname === menu.route;
 

@@ -28,8 +28,10 @@ const AdminLayout = ({ children }) => {
   return (
     <div className="relative lg:pl-64">
       <Sidebar />
-      <section className="min-h-screen bg-gray-50 dark:bg-gray-900 py-6 sm:py-8">
-        {children}
+      <section className="bg-gray-50 dark:bg-gray-900 py-6 sm:py-8">
+        <div className="container mx-auto">
+          <div className="min-h-screen">{children}</div>
+        </div>
       </section>
     </div>
   );

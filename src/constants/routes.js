@@ -12,3 +12,4 @@ export const PRODUCT_MANAGEMENT_ROUTE = "/product-management";
 export const ORDER_MANAGEMENT_ROUTE = "/order-management";
 export const USER_MANAGEMENT_ROUTE = "/user-management";
 export const DASHBOARD_ROUTE = "/dashboard";
+export const PROFILE_ROUTE = "/profile";

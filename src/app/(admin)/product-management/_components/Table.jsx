@@ -82,7 +82,7 @@ const ProductsTable = () => {
   }, [refresh, dispatch, sortBy, sortOrder]);
 
   return (
-    <div className="relative overflow-hidden bg-white shadow-md dark:bg-gray-800 sm:rounded-lg">
+    <div className="relative overflow-hidden bg-white shadow-md dark:bg-gray-800 sm:rounded-lg border border-gray-300 dark:border-gray-700">
       <div className="flex flex-col px-4 py-3 space-y-3 lg:flex-row lg:items-center lg:justify-between lg:space-y-0 lg:space-x-4">
         <div className="flex items-center flex-1 space-x-4">
           <h5>
@@ -109,7 +109,7 @@ const ProductsTable = () => {
       </div>
       <div className="overflow-x-auto">
         <table className="w-full text-sm text-left text-gray-500 dark:text-gray-400">
-          <thead className="text-xs text-gray-600 uppercase font-medium bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
+          <thead className="text-xs text-gray-600 uppercase font-medium bg-gray-50 dark:bg-gray-700 dark:text-gray-200">
             <tr>
               {columns.map((column, index) => (
                 <th

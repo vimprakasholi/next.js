@@ -2,7 +2,7 @@
 import Logo from "@/components/Logo";
 import { HOME_ROUTE } from "@/constants/routes";
 import { useRouter } from "next/navigation";
-import { useEffect, useRef } from "react";
+import { useEffect } from "react";
 import { useSelector } from "react-redux";
 
 const AuthLayout = ({ children }) => {

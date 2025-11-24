@@ -1,12 +1,12 @@
 "use client";
 
-import { FaAngleLeft, FaAngleRight, FaPencil, FaPlus } from "react-icons/fa6";
+import { FaPlus } from "react-icons/fa6";
 import { HiOutlineUpload } from "react-icons/hi";
 import { format } from "date-fns";
 import { FaCog } from "react-icons/fa";
 import { RxDotFilled } from "react-icons/rx";
 import Link from "next/link";
-import { PRODUCT_MANAGEMENT_ROUTE } from "@/constants/routes";
+import { ORDER_MANAGEMENT_ROUTE } from "@/constants/routes";
 import { useEffect, useState } from "react";
 import { getOrders } from "@/api/orders";
 import {
@@ -67,17 +67,13 @@ const OrdersTable = () => {
   const [sortOrder, setSortOrder] = useState(-1);
 
   useEffect(() => {
-    const query = {};
-
-    if (sortBy) query.sort = JSON.stringify({ [sortBy]: sortOrder });
-
     getOrders().then((response) => {
       setOrders(response.data);
     });
-  }, [sortBy, sortOrder]);
+  }, []);
 
   return (
-    <div className="relative overflow-hidden bg-white shadow-md dark:bg-gray-800 sm:rounded-lg">
+    <div className="relative overflow-hidden bg-white shadow-md dark:bg-gray-800 sm:rounded-lg border border-gray-300 dark:border-gray-700">
       <div className="flex flex-col px-4 py-3 space-y-3 lg:flex-row lg:items-center lg:justify-between lg:space-y-0 lg:space-x-4">
         <div className="flex items-center flex-1 space-x-4">
           <h5>
@@ -96,7 +92,7 @@ const OrdersTable = () => {
         <div className="flex flex-col flex-shrink-0 space-y-3 md:flex-row md:items-center lg:justify-end md:space-y-0 md:space-x-3">
           <Link
             className="flex items-center justify-center px-4 py-2 text-sm font-medium text-white rounded-lg bg-primary/80 hover:bg-primary"
-            href={`${PRODUCT_MANAGEMENT_ROUTE}/add-order`}
+            href={`${ORDER_MANAGEMENT_ROUTE}`}
           >
             <FaPlus className="h-3.5 w-3.5 mr-2" />
             Add new order
@@ -112,7 +108,7 @@ const OrdersTable = () => {
       </div>
       <div className="overflow-x-auto">
         <table className="w-full text-sm text-left text-gray-500 dark:text-gray-400">
-          <thead className="text-xs text-gray-600 uppercase font-medium bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
+          <thead className="text-xs text-gray-600 uppercase font-medium bg-gray-50 dark:bg-gray-700 dark:text-gray-200">
             <tr>
               {columns.map((column, index) => (
                 <th
@@ -159,12 +155,12 @@ const OrdersTable = () => {
                   <td className="px-4 py-2 font-medium text-gray-600 whitespace-nowrap dark:text-gray-300">
                     <div className="flex items-center">{index + 1}.</div>
                   </td>
-                  <th
+                  <td
                     scope="row"
                     className="flex items-center px-4 py-2 font-medium whitespace-nowrap"
                   >
                     {order.orderNumber}
-                  </th>
+                  </td>
                   <td className="px-4 py-2">
                     <span className="bg-primary-100 text-primary-800 text-xs font-medium px-2 py-0.5 rounded dark:bg-primary-900 dark:text-primary-300">
                       {order.user.name}

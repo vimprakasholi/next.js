@@ -8,7 +8,7 @@ import { toast } from "react-toastify";
 import { useRouter } from "next/navigation";
 import { useDispatch, useSelector } from "react-redux";
 import { registerUser } from "@/redux/auth/authActions";
-import { useEffect, useRef } from "react";
+import { useEffect } from "react";
 import Button from "@/components/Button";
 
 const Register = () => {
