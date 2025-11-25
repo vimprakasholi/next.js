@@ -1,6 +1,10 @@
 "use client";
 import { EMAIL_REGEX } from "@/constants/regex";
-import { HOME_ROUTE, REGISTER_ROUTE } from "@/constants/routes";
+import {
+  FORGOT_PASSWORD_ROUTE,
+  HOME_ROUTE,
+  REGISTER_ROUTE,
+} from "@/constants/routes";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { useForm } from "react-hook-form";
@@ -103,16 +107,16 @@ const Login = () => {
             </div>
             <div className="ml-3 text-sm">
               <label htmlFor="remember" className="">
-                Remember me
+                Rememder me
               </label>
             </div>
           </div>
-          <a
-            href="#"
+          <Link
+            href={FORGOT_PASSWORD_ROUTE}
             className="text-sm font-medium text-primary hover:underline dark:text-primary-500"
           >
             Forgot password?
-          </a>
+          </Link>
         </div>
         <Button loading={loading} label="Sign in" />
         <p className="text-sm font-light text-slate-500 dark:text-slate-400">

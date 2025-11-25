@@ -26,14 +26,6 @@ const navLinks = [
     label: "Orders",
   },
   {
-    route: BLOGS_ROUTE,
-    label: "Blogs",
-  },
-  {
-    route: TESTIMONIAL_ROUTE,
-    label: "Testimonials",
-  },
-  {
     route: CONTACT_ROUTE,
     label: "Contact",
   },
