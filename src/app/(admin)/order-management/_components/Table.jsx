@@ -21,6 +21,7 @@ import {
   ORDER_STATUS_SHIPPED,
 } from "@/constants/orderStatus";
 import Action from "./Action";
+import { toast } from "react-toastify";
 
 const columns = [
   {
@@ -67,9 +68,11 @@ const OrdersTable = () => {
   const [sortOrder, setSortOrder] = useState(-1);
 
   useEffect(() => {
-    getOrders().then((response) => {
-      setOrders(response.data);
-    });
+    getOrders()
+      .then((response) => {
+        setOrders(response.data);
+      })
+      .catch((error) => toast.error(error.message, { autoClose: 1500 }));
   }, []);
 
   return (

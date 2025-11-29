@@ -28,14 +28,13 @@ const Hero = () => {
                 Shop Now
               </Link>
               <Link
-                href={PRODUCTS_ROUTE}
+                href="#categories"
                 className="border-2 border-white text-white px-6 py-3 rounded-lg text-center hover:bg-primary/50 shadow transition"
               >
                 View Categories
               </Link>
             </div>
           </div>
-          {/* Image  */}
           <div className="md:w-1/2">
             <Image
               height={300}

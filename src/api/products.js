@@ -25,6 +25,10 @@ async function getBrands() {
   return await axios.get(`${config.apiUrl}/api/products/brands`);
 }
 
+async function getProductsCount() {
+  return await axios.get(`${config.apiUrl}/api/products/count`);
+}
+
 async function getCategories() {
   return await axios.get(`${config.apiUrl}/api/products/categories`);
 }
@@ -37,6 +41,7 @@ export {
   createProduct,
   deleteProduct,
   getProducts,
+  getProductsCount,
   getBrands,
   getCategories,
   getProductById,
